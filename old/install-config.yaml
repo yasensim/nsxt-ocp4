@@ -1,0 +1,29 @@
+apiVersion: v1
+baseDomain: yasen.local
+compute:
+- hyperthreading: Enabled
+  name: worker
+  replicas: 0
+controlPlane:
+  hyperthreading: Enabled
+  name: master
+  replicas: 3
+metadata:
+  name: ocp
+networking:
+  networkType: NCP
+  clusterNetwork:
+  - cidr: 10.4.0.0/16
+    hostPrefix: 23
+  machineCIDR: 10.114.16.0/24
+  serviceNetwork:
+  - 172.30.0.0/16
+platform:
+  vsphere:
+    vcenter: vc.yasen.local
+    username: administrator@yasen.local
+    password: VMware1!
+    datacenter: Datacenter1
+    defaultDatastore: NFS
+pullSecret: ''
+sshKey: ''

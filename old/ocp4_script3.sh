@@ -1,0 +1,6 @@
+ssh -i /root/.ssh/id_rsa core@10.114.16.10  "sudo cp /etc/kubernetes/cni/net.d/10-nsx.conf /var/run/multus/cni/net.d/"
+ssh -i /root/.ssh/id_rsa core@10.114.16.11  "sudo cp /etc/kubernetes/cni/net.d/10-nsx.conf /var/run/multus/cni/net.d/"
+ssh -i /root/.ssh/id_rsa core@10.114.16.12  "sudo cp /etc/kubernetes/cni/net.d/10-nsx.conf /var/run/multus/cni/net.d/"
+ssh -i /root/.ssh/id_rsa core@10.114.16.20  "sudo cp /etc/kubernetes/cni/net.d/10-nsx.conf /var/run/multus/cni/net.d/"
+ssh -i /root/.ssh/id_rsa core@10.114.16.21  "sudo cp /etc/kubernetes/cni/net.d/10-nsx.conf /var/run/multus/cni/net.d/"
+ssh -i /root/.ssh/id_rsa core@10.114.16.22  "sudo cp /etc/kubernetes/cni/net.d/10-nsx.conf /var/run/multus/cni/net.d/"

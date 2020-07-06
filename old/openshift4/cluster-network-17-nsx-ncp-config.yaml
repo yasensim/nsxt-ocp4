@@ -1,0 +1,136 @@
+apiVersion: v1
+data: {ncp.ini: '
+
+
+    [vc]
+
+
+    [coe]
+
+    adaptor = openshift4
+
+    cluster = ocp
+
+    loglevel = WARNING
+
+    nsxlib_loglevel = WARNING
+
+    enable_snat = True
+
+
+    [DEFAULT]
+
+
+    # debug = True
+
+    [nsx_v3]
+
+    policy_nsxapi = True
+
+
+    nsx_api_managers = 10.114.209.47,10.114.209.48,10.114.209.49
+
+    nsx_api_user = admin
+
+    nsx_api_password = VMwareVMware1!
+
+
+    insecure = True
+
+
+    subnet_prefix = 24
+
+    #v6_subnet_prefix = 64
+
+    log_dropped_traffic = True
+
+
+    log_firewall_traffic = DENY
+
+
+    use_native_loadbalancer = True
+
+    l4_lb_auto_scaling = True
+
+
+    #lb_default_cert_path = <None>
+
+    #lb_priv_key_path = <None>
+
+
+    pool_algorithm = WEIGHTED_ROUND_ROBIN
+
+
+    #service_size = SMALL
+
+
+    # Choices: <None> cookie source_ip
+
+    #l7_persistence = <None>
+
+
+
+    #l4_persistence = source_ip
+
+
+
+    container_ip_blocks = 10.4.0.0/16
+
+    #no_snat_ip_blocks = []
+
+    external_ip_pools = 10.114.17.0/25
+
+
+    tier0_gateway = t0a
+
+    # top_tier_router = name   # if we want to attach to existing T1
+
+    single_tier_topology = True
+
+
+    overlay_tz = 3efa070d-3870-4eb1-91b9-a44416637922
+
+
+    #dns_servers = []
+
+    edge_cluster = 3088dc2b-d097-406e-b9de-7a161e8d0e47
+
+
+    [ha]
+
+
+
+    [k8s]
+
+
+    apiserver_host_ip = api.ocp.yasen.local
+
+    apiserver_host_port = 6443
+
+    client_token_file = /var/run/secrets/kubernetes.io/serviceaccount/token
+
+    ca_file = /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+
+    loglevel = WARNING
+
+
+    #enable_lb_crd = False
+
+
+    # Choices: <None> allow_cluster allow_namespace
+
+    baseline_policy_type = allow_cluster
+
+    #enable_multus = False
+
+
+
+
+
+
+    '}
+kind: ConfigMap
+metadata:
+  labels: {version: v1}
+  name: nsx-ncp-config
+  namespace: nsx-system
