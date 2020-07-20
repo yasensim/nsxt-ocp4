@@ -118,7 +118,7 @@ data:
 
     nsx_api_user = admin
 
-    nsx_api_password = VMwareVMware1!
+    nsx_api_password = VMware1!
 
     # If True, skip fatal errors when no endpoint in the NSX management cluster
     # is available to serve a request, and retry the request instead
